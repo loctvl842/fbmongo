@@ -1069,6 +1069,11 @@
   optionalDependencies:
     "saslprep" "^1.0.3"
 
+"mongoose-array-validator@^1.0.3":
+  "integrity" "sha512-VcalTH9H1obYkD1LNrekWppxNLXFDhI/bl12LL53+cEmf7TDM2OX5QRgEdWqa9IDkpN0dMCPBvJjbNBqDqXFSw=="
+  "resolved" "https://registry.npmjs.org/mongoose-array-validator/-/mongoose-array-validator-1.0.3.tgz"
+  "version" "1.0.3"
+
 "mongoose-sequence@^5.3.1":
   "integrity" "sha512-kQB1ctCdAQT8YdQzoHV0CpBRsO4RNVy03SOkzM6TQKBbGBs1ZgVS4UlKsuvBPaiPt9q5tKgQZvorGJ1awbHDqA=="
   "resolved" "https://registry.npmjs.org/mongoose-sequence/-/mongoose-sequence-5.3.1.tgz"

@@ -10,13 +10,13 @@ const userRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
 const postRoute = require('./routes/posts');
 const uploadRoute = require('./routes/upload');
-const conversationRoute = require('./routes/conversation');
+const roomRoute = require('./routes/room');
 const messageRoute = require('./routes/message');
 
 dotenv.config();
 
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true }, () => {
-    console.log('Connect to database successfully <3 <3 <3');
+  console.log('Connect to database successfully <3 <3 <3');
 });
 app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
 
@@ -30,10 +30,10 @@ app.use('/api/upload', uploadRoute);
 app.use('/api/users', userRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/posts', postRoute);
-app.use('/api/conversation', conversationRoute);
-app.use('/api/message', messageRoute);
+app.use('/api/rooms', roomRoute);
+app.use('/api/messages', messageRoute);
 
 const PORT = process.env.PORT || 8800;
 app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`);
+  console.log(`Server is running on ${PORT}`);
 });
