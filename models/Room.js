@@ -1,29 +1,33 @@
 const mongoose = require('mongoose');
 const arrayValidator = require('mongoose-array-validator');
 
-const RoomSchema = new mongoose.Schema({
-  members: {
-    type: [String],
-    minItems: 2,
-    required: true,
-  },
-  lastMessage: {
-    senderId: {
+const RoomSchema = new mongoose.Schema(
+  {
+    members: [
+      {
+        userId: {
+          type: String,
+          required: true,
+        },
+        username: {
+          type: String,
+          required: true,
+        },
+        profilePicture: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
+    name: {
       type: String,
-      required: true,
     },
-    content: {
-      type: String,
-      required: true,
+    img: {
+      type: [String],
     },
   },
-  name: {
-    type: String,
-  },
-  img: {
-    type: String,
-  },
-});
+  { timestamps: true },
+);
 
 RoomSchema.plugin(arrayValidator);
 
