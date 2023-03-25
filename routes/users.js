@@ -43,7 +43,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 // get a a user
-// [GET] /api/users?userId=..,username=..
+// [GET] /api/users?userId=..&username=..
 router.get('/', async (req, res) => {
   const userId = req.query.userId;
   const username = req.query.username;

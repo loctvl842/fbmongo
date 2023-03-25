@@ -26,6 +26,9 @@ app.use(helmet());
 app.use(morgan('common'));
 
 // upload to s3
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
 app.use('/api/upload', uploadRoute);
 app.use('/api/users', userRoute);
 app.use('/api/auth', authRoute);
