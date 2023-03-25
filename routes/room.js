@@ -2,12 +2,6 @@ const Room = require('../models/Room');
 const User = require('../models/Users');
 const router = require('express').Router();
 
-// redis
-const REDIS_PORT = process.env.PORT || 6379;
-const Redis = require('redis');
-const redisClient = Redis.createClient(REDIS_PORT);
-const DEFAULT_EXPIRATION = 3600;
-
 const hasDuplicate = (arr) => {
   let n = arr.length;
   console.log(n);
@@ -38,10 +32,6 @@ router.post(`/`, async (req, res) => {
     console.log({ err });
     res.status(500).json(err);
   }
-});
-
-redisClient.on('error', (err) => {
-  console.log('error: ' + err);
 });
 
 // pass id of current user
